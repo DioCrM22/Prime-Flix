@@ -1,0 +1,235 @@
+@font-face {
+  font-family: 'Moon Cresta';
+  font-family: 'Kroftsmann';
+  src: url('/public/fonts/MoonCresta.otf') format('opentype');
+  src: url('/public/fonts/Kroftsmann.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== SISTEMA DE FONTES ===== */
+:root {
+  --font-logo: 'Moon Cresta', 'Arial Black', Impact, sans-serif;
+  --font-primary: 'Inter', system-ui, sans-serif;
+}
+
+.meus-filmes{
+    margin-top: clamp(24px, 5vw, 40px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 clamp(16px, 4vw, 24px);
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 70vh;
+}
+
+.meus-filmes h1{
+    font-family: 'Moon Cresta', sans-serif;
+    letter-spacing: 3px;
+    margin-bottom: clamp(14px, 3vw, 20px);
+    font-size: clamp(2.1rem, 10vw, 3rem);
+    text-align: center;
+    color: black;
+}
+
+.lista-vazia{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.lista-vazia span{
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    color: #000000;
+    text-align: center;
+}
+
+.btn-explorar{
+    font-family: 'Moon Cresta', sans-serif;
+    letter-spacing: 3px;
+    padding: 12px 24px;
+    background: #116feb;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-explorar:hover{
+    background: #0d5ec4;
+    transform: translateY(-2px);
+}
+
+.filmes-grid{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 4vw, 30px);
+    width: 100%;
+    max-width: 1200px;
+    margin-top: clamp(20px, 4vw, 30px);
+}
+
+.filme-card{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.filme-card:hover{
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.filme-imagem{
+    width: clamp(200px, 25vw, 300px);
+    aspect-ratio: 2/3; 
+    flex: 0 0 auto;
+}
+
+.filme-imagem img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
+    
+    transition: object-position 0.3s ease;
+}
+
+/* Melhora o foco no hover */
+.filme-card:hover .filme-imagem img{
+    object-position: center 20%;
+}
+
+.filme-info{
+    padding: clamp(10px, 2vw, 15px);
+    display: flex;
+    flex-direction: column;
+    gap: 8px; 
+}
+
+.filme-info h3{
+    font-family: 'Kroftsmann';
+    letter-spacing: 3px;
+    font-size: clamp(1.3rem, 5vw, 1.9rem);
+    color: black;
+}
+
+.filme-avaliacao{
+    color: #ffcc00;
+    font-weight: 800;
+    font-size: clamp(1rem, 3vw, 1.3rem);
+}
+
+.filme-overview{
+    /* Para navegadores modernos */
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    
+    /* Fallback para outros navegadores */
+    display: -moz-box;
+    -moz-line-clamp: 4;
+    -moz-box-orient: vertical;
+    
+    /* Propriedade padrão (futuro) */
+    line-clamp: 4;
+    
+    /* Comportamento de overflow */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.filme-actions{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-detalhes{
+    font-family: 'Moon Cresta';
+    letter-spacing: 3px;
+    padding: 15px 16px;
+    background: #116feb;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: clamp(1rem, 2.4vw, 1.1rem);
+    transition: all 0.3s ease;
+    flex: 1;
+    text-align: center;
+    min-width: 120px;
+}
+
+.btn-detalhes:hover{
+    background: #0d5ec4;
+    transform: translateY(-2px);
+}
+
+.btn-excluir{
+    font-family: 'Moon Cresta';
+    letter-spacing: 3px;
+    padding: 10px 16px;
+    background: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: clamp(1rem, 2.4vw, 1.1rem);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 120px;
+}
+
+.btn-excluir:hover{
+    background: #cc0000;
+    transform: translateY(-2px);
+}
+
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    color: #fff;
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .filmes-grid{
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .filme-imagem{
+        height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .filmes-grid{
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .filme-actions{
+        flex-direction: column;
+    }
+    
+    .btn-detalhes,
+    .btn-excluir{
+        min-width: 100%;
+    }
+}
