@@ -10,17 +10,19 @@
 
 </div>
 
-## 📸 Gallery do Projeto
+## 📸 Visualizações do Projeto
 
 <div align="center">
 
-### 🖼️ Screenshots Interativas
+### 🏠 Interface Principal - Home
+<img src="https://github.com/user-attachments/assets/e8783bc3-bd02-481d-9e46-f3e325e4b72e" alt="Interface Principal" width="800" style="border-radius: 10px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); border: 1px solid #333;"/>
 
-| | Descrição | Link |
-|-|-----------|------|
-| 🖥️ | **Interface Principal**<br>Layout completo com carrossel e grade | [Visualizar](https://ibb.co/KzwXNpFT) |
-| 🎬 | **Carrossel de Filmes**<br>Navegação suave com controles | [Visualizar](https://ibb.co/B58M1jx4) |
-| 📱 | **Versão Mobile**<br>Design responsivo otimizado | [Visualizar](https://ibb.co/pvtYxwXB) |
+### ⭐ Página de Favoritos - Meus Filmes
+<img src="https://github.com/user-attachments/assets/4ce0f0be-30f0-456f-a699-6fdce54e3f96" alt="Carrossel Interativo" width="800" style="border-radius: 10px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); border: 1px solid #333; margin-top: 30px;"/>
+
+### 🎬 Informções do Filme - Filme
+<img src="https://github.com/user-attachments/assets/2b57f46b-0c6c-4f28-9226-2f5b78e73d19" alt="Design Responsivo" width="800" style="border-radius: 10px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); border: 1px solid #333; margin-top: 30px;"/>
+
 
 </div>
 
@@ -41,6 +43,11 @@ O projeto demonstra excelência em desenvolvimento **front-end**, com foco em **
 🌐 **Acesse a aplicação:**  
 🔗 [https://prime-flix-wheat.vercel.app/](https://prime-flix-wheat.vercel.app/)
 
+### 🌍 **Deploy & Hospedagem**
+- **Plataforma:** Vercel
+- **Status:** ✅ Production Ready
+- **CI/CD:** Deploy automático com Git
+  
 ---
 
 ## 🎨 Funcionalidades Implementadas  
@@ -93,7 +100,7 @@ useEffect(() => {
   async function loadFilmes() {
     const response = await api.get('movie/now_playing', {
       params: {
-        api_key: 'chave_api',
+        api_key: process.env.REACT_APP_API_KEY,
         language: 'pt-BR',
         page: 1,
       },
@@ -104,33 +111,33 @@ useEffect(() => {
   loadFilmes();
 }, []);
 ```
-## 🌟 Diferenciais Técnicos
-### ⚡ Performance e Otimização
-CDN de imagens do TMDB para carregamento rápido
+## 🛠️ Como Executar o Projeto
 
-Renderização eficiente com keys únicas e estáveis
+### 📋 Pré-requisitos
+- Node.js 16+ instalado
+- Gerenciador de pacotes (npm ou yarn)
+- Chave da API TMDB
 
-Gestão de estado otimizada com useState
+### 🚀 Instalação e Execução
 
-Efeitos colaterais controlados com dependências do useEffect
+```bash
+# 1. Clone o repositório
+git clone https://github.com/DioCrM22/Prime-Flix.git
 
-### 🎨 Experiência Visual
-Hierarquia visual clara e intuitiva
+# 2. Acesse a pasta do projeto
+cd Prime-Flix
 
-Tipografia escalável e legível
+# 3. Instale as dependências
+npm install
 
-Paleta de cores temática cinematográfica
+# 4. Configure a variável de ambiente
+# Crie um arquivo .env na raiz com:
+REACT_APP_API_KEY=sua_chave_tmdb_aqui
 
-Microinterações suaves e profissionais
+# 5. Execute o projeto
+npm start
 
-### 🔧 Qualidade de Código
-Princípios Clean Code aplicados
-
-Reutilização de componentes
-
-Minimização de prop drilling
-
-Error handling robusto
+```
 
 ## 🎓 Contexto de Desenvolvimento
 “O Prime Flix representa um marco significativo na minha jornada de aprendizado em desenvolvimento front-end.
