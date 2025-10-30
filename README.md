@@ -15,13 +15,17 @@
 
 ## 📸 Visualizações do Projeto  
 
-<div align="center">
-  <img src="./images/tela.png" width="700" alt="Tela principal do Prime Flix">
-</div>
+### 🖥️ Interface Principal
 
-![Detalhes do filme](./images/tela1.png)
+![Tela Principal](./images/tela.png)
 
-![Layout responsivo](./images/tela2.png)
+### 🎬 Carrossel de Destaques
+
+![Carrossel](./images/tela1.png)
+
+### 📱 Visualização Mobile
+
+![Mobile](./images/tela2.png)
 
 ---
 
